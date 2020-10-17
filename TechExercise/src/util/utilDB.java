@@ -37,10 +37,10 @@ public class utilDB {
 
 		      try {
 		         tx = session.beginTransaction();
-		         List<?> EmployeeWrights = session.createQuery("FROM EmployeeWright").list();
-		         for (Iterator<?> iterator = EmployeeWrights.iterator(); iterator.hasNext();) {
-		            EmployeeWright EmployeeWright = (EmployeeWright) iterator.next();
-		            resultList.add(EmployeeWright);
+		         List<?> BudgetItemss = session.createQuery("FROM BudgetItems").list();
+		         for (Iterator<?> iterator = BudgetItemss.iterator(); iterator.hasNext();) {
+		            BudgetItems BudgetItems = (BudgetItems) iterator.next();
+		            resultList.add(BudgetItems);
 		         }
 		         tx.commit();
 		      } catch (HibernateException e) {
