@@ -18,4 +18,4 @@
 		<property name="show_sql">true</property>
 		<mapping class="datamodel.Item" />
 	</session-factory>
-</hibernate-configuration>
+</hibernate-configuration> 
