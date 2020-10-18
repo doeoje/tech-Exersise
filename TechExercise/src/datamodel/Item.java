@@ -89,9 +89,9 @@ public class Item {
 		this.paid = paid;
 	}
 
-	public boolean thisMonth(int month) {
+	public boolean thisMonth(int month, int year) {
 		
-		return date.getMonth()==month;
+		return date.getMonth()==month && date.getYear() == year;
 	}
 
 }

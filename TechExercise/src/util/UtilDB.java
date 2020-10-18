@@ -60,7 +60,7 @@ public class UtilDB {
 		return resultList;
 	}
 
-	public static List<Item> listItem(int month) {
+	public static List<Item> listItem(int month, int year) {
 		List<Item> resultList = new ArrayList<Item>();
 
 		Session session = getSessionFactory().openSession();
@@ -71,7 +71,7 @@ public class UtilDB {
 			List<?> Items = session.createQuery("FROM Item").list();
 			for (Iterator<?> iterator = Items.iterator(); iterator.hasNext();) {
 				Item Item = (Item) iterator.next();
-				if (Item.thisMonth(month))
+				if (Item.thisMonth(month, year))
 					resultList.add(Item);
 			}
 			tx.commit();
