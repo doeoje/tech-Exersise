@@ -1,0 +1,64 @@
+<html>
+<head>
+<style>
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;	 
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+section {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;	 	 
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Select month</h1>
+	</header>
+	<nav>
+		<a href="/TechExercise/add_item.html">Add Item</a> <br>
+	</nav>
+	
+	<section>
+		<h1>Month</h1>
+		<form action="HibernateServletDB" method="POST">
+			<select name="month" id="month">
+				<option value="0">January</option>
+				<option value="1">February</option>
+				<option value="2">March</option>
+				<option value="3">April</option>
+				<option value="4">May</option>
+				<option value="5">June</option>
+				<option value="6">July</option>
+				<option value="7">August</option>
+				<option value="8">September</option>
+				<option value="9">October</option>
+				<option value="10">November</option>
+				<option value="11">December</option>
+			</select>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</section>
+	
+	
+</body>
+</html>
