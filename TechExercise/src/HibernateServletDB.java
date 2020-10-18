@@ -39,11 +39,13 @@ public class HibernateServletDB extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		String temp = request.getParameter("month");
+		String yearString = request.getParameter("year");
 		int month = temp == null?0 : Integer.parseInt(temp);
-		retrieveDisplayData(response.getWriter(), month);
+		int year = yearString == null?0 : Integer.parseInt(yearString);
+		retrieveDisplayData(response.getWriter(), month, year);
 	}
 
-	private void retrieveDisplayData(PrintWriter out, int month) {
+	private void retrieveDisplayData(PrintWriter out, int month, int year) {
 		// TODO Auto-generated method stub
 		String title = "Database Result";
 		
@@ -59,9 +61,9 @@ public class HibernateServletDB extends HttpServlet {
 				"<body bgcolor=\"#f0f0f0\">\n" + //
 				"<h1 align=\"center\">" + title + "</h1>\n");
 		out.println("<ul>");
-		List<Item> listItems = UtilDB.listItem(month);
+		List<Item> listItems = UtilDB.listItem(month, year);
 		if(!listItems.isEmpty()) {
-			out.println("<h1>" + Month.of(month+1) + "</h1>");
+			out.println("<h1>" + Month.of(month+1) + "/" + (year + 1900) + "</h1>");
 			for (Item item : listItems) {
 				String markPaid = markPaidleft + item.getId() + markPaidright;
 				String paymentStatus = item.getPaid()?"Paid":"Not Paid";

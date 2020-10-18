@@ -53,21 +53,20 @@ public class AddItem extends HttpServlet {
 				"<body bgcolor=\"#f0f0f0\">\n" + //
 				"<h1 align=\"center\">" + title + "</h1>\n");
 		if (request.getParameter("itemname") == null || request.getParameter("cost") == null
-				|| request.getParameter("month") == null ||
-				request.getParameter("itemname") == "" || request.getParameter("cost") == ""
-				|| request.getParameter("month") == "") {
+				|| request.getParameter("month") == null || request.getParameter("itemname") == ""
+				|| request.getParameter("cost") == "" || request.getParameter("month") == "") {
 			out.println("<h1>Item could not be Added</h1>");
 		} else {
 			String itemname = request.getParameter("itemname");
 			Double cost = Double.parseDouble(request.getParameter("cost"));
-			
+
 			Date date;
 			int month = Integer.parseInt(request.getParameter("month"));
-			date = new Date(120,month,28);
+			int year = Integer.parseInt(request.getParameter("year"));
+			date = new Date(year, month, 28);
 			UtilDB.createItems(itemname, cost, date);
 			out.println("<h1>Item Added</h1>");
-			
-			
+
 		}
 		out.println("<ul>");
 
